@@ -10,5 +10,6 @@ char	*ft_strmap(const char *s, char (*f)(char))
 	p = str;
 	while (*s)
 		*p++ = f(*s++);
+	*p = '\0';
 	return (str);
 }

@@ -11,6 +11,6 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	p = str;
 	while (len-- > 0)
 		*p++ = *s++;
-	*p = 0;
+	*p = '\0';
 	return (str);
 }

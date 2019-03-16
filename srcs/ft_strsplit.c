@@ -40,7 +40,7 @@ static char		*ft_strdup_first(const char *s, char c, size_t len)
 	p = str;
 	while (*s && *s != c)
 		*p++ = *s++;
-	*p = 0;
+	*p = '\0';
 	return (str);
 }
 
