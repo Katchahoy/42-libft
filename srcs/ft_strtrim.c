@@ -15,13 +15,15 @@ static size_t	ft_strlen_trim(const char *s)
 	while (ft_is_space(*s++))
 		len_trim--;
 	
-	p = s + len - 1;
+	p = (char*)s + len - 1;
 	
 	while (ft_is_space(*p))
+		;
 	return (len_trim);
 }
 
 char			*ft_strtrim(const char *s)
 {
-
+	ft_strlen_trim(s);
+	return (NULL);
 }

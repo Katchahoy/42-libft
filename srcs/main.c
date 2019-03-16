@@ -281,8 +281,26 @@ void	test_strsplit(int ac, char **av)
 	}
 }
 
+test_strsub(int ac, char **av)
+{
+	char			*s;
+	char			*sub;
+	unsigned int	start;
+	size_t			len;
+
+	if (ac == 4)
+	{
+		s = av[1];
+		start = atoi(av[2]);
+		len = atoi(av[3]);
+		sub = ft_strsub(s, start, len);
+		ft_putstr(sub);
+		ft_putchar('\n');
+	}
+}
+
 int		main(int ac, char **av)
 {
-	test_strsplit(ac, av);
+	test_strsub(ac, av);
 	return (0);
 }

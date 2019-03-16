@@ -8,7 +8,8 @@ char	*ft_strnew(size_t size)
 	if (!(str = (char*)malloc(size + 1)))
 		return (NULL);
 	p = str;
-	while (size-- >= 0)
+	while (size-- > 0)
 		*p++ = '\0';
+	*p = '\0';
 	return (str);
 }
