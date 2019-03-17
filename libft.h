@@ -16,6 +16,14 @@ typedef struct	s_list
 	struct s_list	*next;
 }				t_list;
 
+typedef struct	s_btree
+{
+	void			*content;
+	size_t			content_size;
+	struct s_btree	*left;
+	struct s_btree	*right;
+}				t_btree;
+
 size_t			ft_strlen(const char *str);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 
