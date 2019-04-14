@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_btree_create_node.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: scarpent <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/04/14 16:28:07 by scarpent          #+#    #+#             */
+/*   Updated: 2019/04/14 16:28:36 by scarpent         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-t_btree		*btree_create_node(void *content, size_t content_size)
+t_btree	*btree_create_node(void *content, size_t content_size)
 {
 	t_btree	*new_node;
 
