@@ -6,7 +6,7 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/01 12:48:35 by exam              #+#    #+#             */
-/*   Updated: 2019/03/01 14:08:54 by exam             ###   ########.fr       */
+/*   Updated: 2019/04/14 17:27:14 by scarpent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,41 +30,54 @@ static void	print_char(unsigned char c)
 	write(1, &c, 1);
 }
 
+void		print_memory_hex(unsigned char *k, size_t size, size_t i)
+{
+	size_t	j;
+
+	j = i;
+	while (j < i + 16)
+	{
+		if (j >= size)
+			write(1, "  ", 2);
+		else
+			print_hex(k[j]);
+		j++;
+		if (j % 2 == 0)
+			write(1, " ", 1);
+	}
+}
+
+void		print_memory_char(unsigned char *k, size_t size, size_t i)
+{
+	size_t	j;
+
+	j = i;
+	while (j < i + 16)
+	{
+		if (j >= size)
+		{
+			write(1, "\n", 1);
+			break ;
+		}
+		else
+			print_char(k[j]);
+		j++;
+		if (j % 16 == 0)
+			write(1, "\n", 1);
+	}
+}
+
 void		print_memory(const void *addr, size_t size)
 {
-	size_t	i;
-	size_t	j;
+	size_t			i;
 	unsigned char	*k;
 
 	k = (unsigned char*)addr;
 	i = 0;
 	while (i < size)
 	{
-		j = i;
-		while (j < i + 16)
-		{
-			if (j >= size)
-				write(1, "  ", 2);
-			else
-				print_hex(k[j]);
-			j++;
-			if (j % 2 == 0)
-				write(1, " ", 1);
-		}
-		j = i;
-		while (j < i + 16)
-		{
-			if (j >= size)
-			{
-				write(1, "\n", 1);
-				break;
-			}
-			else
-				print_char(k[j]);
-			j++;
-			if (j % 16 == 0)
-				write(1, "\n", 1);
-		}
+		print_memory_hex(k, size, i);
+		print_memory_char(k, size, i);
 		i += 16;
 	}
 }
