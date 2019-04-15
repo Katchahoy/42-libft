@@ -3,6 +3,7 @@ CFLAGS=-Wall -Wextra -Werror
 NAME=libft.a
 INCL=./includes
 SRC=ft_atoi.c\
+	ft_btree_create_node.c\
 	ft_bzero.c\
 	ft_isalnum.c\
 	ft_isalpha.c\
@@ -17,6 +18,7 @@ SRC=ft_atoi.c\
 	ft_lstmap.c\
 	ft_lstnew.c\
 	ft_memalloc.c\
+	ft_memccpy.c\
 	ft_memchr.c\
 	ft_memcmp.c\
 	ft_memcpy.c\
@@ -77,11 +79,10 @@ $(NAME): $(OBJ)
 \e[38;5;8m:: : :     :: :: :   :   : :   :   : :   :        : :: ::   ::    :      :\n"
 	@ar rc $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@/bin/rm -f $(OBJ)
 	@echo "\e[38;5;15mCompiled \e[38;5;2m$(NAME)\e[38;5;15m successfully"
 	
 
-$(OBJ):
+$(OBJ): $(SRC)
 	@$(CC) $(CFLAGS) -I $(INCL) -c $(SRC)
 
 clean:
@@ -92,4 +93,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: $(NAME) all clean fclean re
+.PHONY: all clean fclean re
