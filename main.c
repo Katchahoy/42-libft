@@ -4,7 +4,7 @@
 
 void	print_memory(const void *addr, size_t size);
 
-void	test_strlcat(void)
+static void	test_strlcat(void)
 {
 	int		i;
 	size_t	j;
@@ -60,7 +60,7 @@ void	test_strlcat(void)
 	}
 }
 
-void	test_strstr(void)
+static void	test_strstr(void)
 {
 	int		i;
 	int		j;
@@ -120,7 +120,7 @@ void	test_strstr(void)
 	}
 }
 
-void	test_strnstr(void)
+static void	test_strnstr(void)
 {
 	int		i;
 	int		j;
@@ -184,7 +184,7 @@ void	test_strnstr(void)
 	}
 }
 
-t_list	*div2(t_list *elem)
+static t_list	*div2(t_list *elem)
 {
 	char	*str;
 
@@ -196,7 +196,7 @@ t_list	*div2(t_list *elem)
 	return (elem);
 }
 
-void	print(t_list *elem)
+static void	print(t_list *elem)
 {
 	char	*str;
 
@@ -208,13 +208,13 @@ void	print(t_list *elem)
 	}
 }
 
-void	del(void *content, size_t size)
+static void	del(void *content, size_t size)
 {
 	free(content);
 	(void)size;
 }
 
-void	test_lstmap(int ac, char **av)
+static void	test_lstmap(int ac, char **av)
 {
 	if (ac == 4)
 	{
@@ -237,7 +237,7 @@ void	test_lstmap(int ac, char **av)
 	}
 }
 
-void	test_itoa(int ac, char **av)
+static void	test_itoa(int ac, char **av)
 {
 	int		nb;
 
@@ -248,7 +248,7 @@ void	test_itoa(int ac, char **av)
 	}
 }
 
-void	test_power(int ac, char **av)
+static void	test_power(int ac, char **av)
 {
 	int		n;
 	int		p;
@@ -261,7 +261,7 @@ void	test_power(int ac, char **av)
 	}
 }
 
-void	test_strsplit(int ac, char **av)
+static void	test_strsplit(int ac, char **av)
 {
 	char	*s;
 	char	c;
@@ -281,7 +281,7 @@ void	test_strsplit(int ac, char **av)
 	}
 }
 
-test_strsub(int ac, char **av)
+static test_strsub(int ac, char **av)
 {
 	char			*s;
 	char			*sub;

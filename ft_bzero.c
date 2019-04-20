@@ -6,13 +6,13 @@
 /*   By: scarpent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 16:28:55 by scarpent          #+#    #+#             */
-/*   Updated: 2019/04/14 16:28:59 by scarpent         ###   ########.fr       */
+/*   Updated: 2019/04/14 18:01:55 by scarpent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
 	char	*p;
 

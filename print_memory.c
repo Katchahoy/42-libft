@@ -6,13 +6,13 @@
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/01 12:48:35 by exam              #+#    #+#             */
-/*   Updated: 2019/04/14 17:27:14 by scarpent         ###   ########.fr       */
+/*   Updated: 2019/04/14 18:10:55 by scarpent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static void	print_hex(unsigned char c)
+static void		print_hex(unsigned char c)
 {
 	char	c1;
 	char	c2;
@@ -23,14 +23,14 @@ static void	print_hex(unsigned char c)
 	write(1, &c1, 1);
 }
 
-static void	print_char(unsigned char c)
+static void		print_char(unsigned char c)
 {
 	if (c < ' ' || c > '~')
 		c = '.';
 	write(1, &c, 1);
 }
 
-void		print_memory_hex(unsigned char *k, size_t size, size_t i)
+static void		print_memory_hex(unsigned char *k, size_t size, size_t i)
 {
 	size_t	j;
 
@@ -47,7 +47,7 @@ void		print_memory_hex(unsigned char *k, size_t size, size_t i)
 	}
 }
 
-void		print_memory_char(unsigned char *k, size_t size, size_t i)
+static void		print_memory_char(unsigned char *k, size_t size, size_t i)
 {
 	size_t	j;
 
@@ -67,7 +67,7 @@ void		print_memory_char(unsigned char *k, size_t size, size_t i)
 	}
 }
 
-void		print_memory(const void *addr, size_t size)
+void			print_memory(const void *addr, size_t size)
 {
 	size_t			i;
 	unsigned char	*k;

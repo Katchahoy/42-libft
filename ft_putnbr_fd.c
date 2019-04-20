@@ -6,7 +6,7 @@
 /*   By: scarpent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 16:34:52 by scarpent          #+#    #+#             */
-/*   Updated: 2019/04/14 16:54:55 by scarpent         ###   ########.fr       */
+/*   Updated: 2019/04/20 11:39:23 by scarpent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
+	unsigned int	nb;
 
-	str = ft_itoa(n);
-	ft_putstr_fd(str, fd);
-	free(str);
+	nb = n < 0 ? -n : n;
+	if (n < 0)
+		ft_putchar_fd('-', fd);
+	if (nb > 9)
+		ft_putnbr_fd(nb / 10, fd);
+	ft_putchar_fd(nb % 10 + '0', fd);
 }

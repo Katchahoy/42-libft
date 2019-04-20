@@ -6,7 +6,7 @@
 /*   By: scarpent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 16:56:48 by scarpent          #+#    #+#             */
-/*   Updated: 2019/04/14 16:56:52 by scarpent         ###   ########.fr       */
+/*   Updated: 2019/04/14 20:09:25 by scarpent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	ft_putendl_fd(const char *s, int fd)
 {
-	write(fd, s, ft_strlen(s));
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

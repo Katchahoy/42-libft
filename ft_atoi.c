@@ -6,7 +6,7 @@
 /*   By: scarpent <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/14 16:26:56 by scarpent          #+#    #+#             */
-/*   Updated: 2019/04/14 16:26:59 by scarpent         ###   ########.fr       */
+/*   Updated: 2019/04/20 14:33:59 by scarpent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ static int	ft_issign(char c)
 	return (c == '+' || c == '-');
 }
 
-int			ft_atoi(char *str)
+int			ft_atoi(const char *str)
 {
-	int		sign;
-	int		nb;
+	char	sign;
+	long	nb;
 
 	if (!str)
 		return (0);
@@ -42,5 +42,5 @@ int			ft_atoi(char *str)
 		str++;
 	while (ft_isdigit(*str))
 		nb = nb * 10 + *str++ - '0';
-	return (nb * sign);
+	return (int)(sign < 0 ? -nb : nb);
 }
